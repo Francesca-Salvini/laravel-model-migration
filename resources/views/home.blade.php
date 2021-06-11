@@ -7,6 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Lista pacchetti</h1>
+
+    <ul>
+        @foreach($packages as $package)
+            <li>
+                <div>Country: {{ $package->country }}</div>
+                <div>City: {{ $package->city }} </div>
+                <div>Host: {{ $package->host }} </div>
+                <div>Board: {{ $package->board }} </div>
+                @if($package->description)
+                    <div>Description: {{ $package->description }} </div>
+                @endif
+                <div>Price: {{ $package->price }} </div>
+                
+            </li>
+        @endforeach
+    </ul>
 </body>
 </html>
